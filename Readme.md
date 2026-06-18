@@ -116,7 +116,7 @@ PROJECT_NAME=Csyrus Workflow Approval API
 VERSION=1.0.0
 API_V1_STR=/api/v1
 
-DATABASE_URL=postgresql://postgres:rishabh@localhost:5432/csyrus_db
+DATABASE_URL=postgresql://username:password@localhost:5432/your_db_name
 
 SECRET_KEY=your_secret_key
 ALGORITHM=HS256
