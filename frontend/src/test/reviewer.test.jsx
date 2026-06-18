@@ -3,7 +3,7 @@ import { describe, test, expect, vi } from 'vitest';
 import { render, screen, fireEvent } from '@testing-library/react';
 import RequestCard from '../components/RequestCard.jsx';
 
-// Bypass the utils path issue by mocking it securely in the test memory
+
 vi.mock('../utilis/formatters', () => ({
   getPriorityStyles: vi.fn(() => 'mock-badge-class'),
   formatDate: vi.fn(() => 'Jan 01, 2026')
