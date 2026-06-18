@@ -9,17 +9,17 @@ const RequestForm = ({ onSubmit, onCancel, initialData, user }) => {
     reviewer_id: '' 
   });
   
-  // Reviewers ki list store karne ke liye state
+
   const [reviewers, setReviewers] = useState([]);
 
   useEffect(() => {
-    // Backend se Reviewers ki list fetch karo
+    
     const fetchReviewers = async () => {
       try {
         const response = await apiClient.get('/auth/reviewers');
         setReviewers(response.data);
         
-        // Agar naya form ban raha hai, toh default pehla reviewer select kar lo
+        
         if (!initialData && response.data.length > 0) {
           setFormData(prev => ({ ...prev, reviewer_id: response.data[0].id }));
         }
@@ -29,7 +29,7 @@ const RequestForm = ({ onSubmit, onCancel, initialData, user }) => {
     };
     fetchReviewers();
 
-    // Agar form Edit mode mein khula hai, toh purana data set karo
+    
     if (initialData) {
       setFormData(initialData);
     }
@@ -71,7 +71,7 @@ const RequestForm = ({ onSubmit, onCancel, initialData, user }) => {
             </select>
           </div>
           
-          {/* YAHAN FIX KIYA HAI: Dropdown lagaya hai */}
+         
           <div className="form-group">
             <label>Assign to Reviewer</label>
             <select name="reviewer_id" className="form-control" value={formData.reviewer_id} onChange={handleChange} required>
